@@ -1,9 +1,11 @@
 #comienzo proyecto
-import matplotlib.pyplot as plt
-from matplotlib.widgets import Button
-from PIL import Image
+#Librerias
+import pygame
+import sys
+import os
 import numpy as np
 
+pygame.init()
 
 
 
