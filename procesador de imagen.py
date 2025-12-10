@@ -11,7 +11,14 @@ pygame.init()
 ANCHO, ALTO = 900, 650
 VENTANA = pygame.display.set_mode((ANCHO, ALTO))
 pygame.display.set_caption("Procesador de Imágenes")
-#------------------------------------------------------------------
+
+# ------------------ COLORES --------------------------------------
+FONDO = (220, 190, 255)     # LILA SUAVE
+BLANCO = (255, 255, 255)
+NEGRO = (0, 0, 0)
+MORADO_BOTON = (170, 0, 200)
+MORADO_PRESIONADO = (140, 0, 160)
+BORDE_BOTON = (255, 255, 255)
 
 
 # BOTONES, INTERFAZ Y EVENTOS --------------------------------------------------------------------------------------------------------------------------------------------------------------
