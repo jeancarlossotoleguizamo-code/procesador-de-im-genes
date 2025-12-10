@@ -34,4 +34,27 @@ def boton(superficie, rect, texto, presionado):
     )
 
 # LOOP PRINCIPAL ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+clock = pygame.time.Clock()
 
+while True:
+    for evento in pygame.event.get():
+        if evento.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+
+        if evento.type == pygame.MOUSEBUTTONDOWN:
+            if btn_90.collidepoint(evento.pos):
+                CLICK.play(); pres90 = True; rotar_90()
+            if btn_180.collidepoint(evento.pos):
+                CLICK.play(); pres180 = True; rotar_180()
+            if btn_270.collidepoint(evento.pos):
+                CLICK.play(); pres270 = True; rotar_270()
+            if btn_gris.collidepoint(evento.pos):
+                CLICK.play(); presgris = True; escala_grises()
+            if btn_reset.collidepoint(evento.pos):
+                CLICK.play(); presreset = True; reiniciar()
+
+        if evento.type == pygame.MOUSEBUTTONUP:
+            pres90 = pres180 = pres270 = presgris = presreset = False
+
+    VENTANA.fill(FONDO)
