@@ -1,10 +1,17 @@
 #comienzo proyecto
-import matplotlib.pyplot as plt
-from matplotlib.widgets import Button
-from PIL import Image
+#Librerias
+import pygame
+import sys
+import os
 import numpy as np
 
+pygame.init()
 
+#-------------Ventana----------------------------------------------
+ANCHO, ALTO = 900, 650
+VENTANA = pygame.display.set_mode((ANCHO, ALTO))
+pygame.display.set_caption("Procesador de Imágenes")
+#------------------------------------------------------------------
 
 
 # BOTONES, INTERFAZ Y EVENTOS --------------------------------------------------------------------------------------------------------------------------------------------------------------
