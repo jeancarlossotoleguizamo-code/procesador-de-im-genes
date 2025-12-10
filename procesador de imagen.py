@@ -20,6 +20,12 @@ MORADO_BOTON = (170, 0, 200)
 MORADO_PRESIONADO = (140, 0, 160)
 BORDE_BOTON = (255, 255, 255)
 
+# ------------------ SONIDO ------------------
+if not os.path.exists("click.wav"):
+    print("⚠ ERROR: No se encontró click.wav")
+    sys.exit()
+CLICK = pygame.mixer.Sound("click.wav")
+
 
 # BOTONES, INTERFAZ Y EVENTOS --------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Rectángulos de botones
