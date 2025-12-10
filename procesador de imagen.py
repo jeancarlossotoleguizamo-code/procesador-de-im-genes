@@ -40,6 +40,16 @@ def boton(superficie, rect, texto, presionado):
         )
     )
 
+if os.path.exists("extrat.jpg"):
+    imagen_original = pygame.image.load("extrat.jpg").convert_alpha()
+    imagen_original = pygame.transform.smoothscale(imagen_original, (400, 400))
+    imagen_actual = imagen_original.copy()
+else:
+    print("⚠ ERROR: No se encontró extrat.jpg")
+    sys.exit()
+
+
+
 # LOOP PRINCIPAL ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 clock = pygame.time.Clock()
 
