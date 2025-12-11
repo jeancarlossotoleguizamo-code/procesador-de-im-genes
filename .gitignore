@@ -1,0 +1,52 @@
+# --- ARCHIVOS DE PYTHON ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+
+# --- ENTORNOS VIRTUALES ---
+venv/
+env/
+.venv/
+pythonenv/
+
+# --- ARCHIVOS DE SISTEMA ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- ARCHIVOS DE EDITORES ---
+.vscode/
+.idea/
+*.code-workspace
+
+# --- ARCHIVOS TEMPORALES ---
+*.log
+*.tmp
+*.swp
+*.swo
+
+# --- ARCHIVOS DE AUDIO E IMAGENES ---
+*.mp3
+*.wav
+*.ogg
+*.jpg
+*.jpeg
+*.png
+
+# PERMITIR SOLO LOS ARCHIVOS NECESARIOS DEL PROYECTO
+!extrat.jpg
+!click.wav
+
+# --- ARCHIVOS EJECUTABLES Y COMPRIMIDOS ---
+*.exe
+*.dll
+*.so
+*.zip
+*.tar
+*.gz
+
+# --- PRUEBAS ---
+tests/__pycache__/
+
