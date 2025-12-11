@@ -28,7 +28,43 @@ CLICK = pygame.mixer.Sound("click.wav")
 # ------------------Fuente------------------------------------
 fuente = pygame.font.SysFont("Arial", 24, bold=True)
 
+# ================  CARGA Y PROCESO DE IMAGEN  =======================
 
+# Cargar imagen
+if os.path.exists("extrat.jpg"):
+    imagen_original = pygame.image.load("extrat.jpg").convert_alpha()
+    imagen_original = pygame.transform.smoothscale(imagen_original, (400, 400))
+    imagen_actual = imagen_original.copy()
+else:
+    print("⚠ ERROR: No se encontró extrat.jpg")
+    sys.exit()
+
+# Funciones de edición
+def rotar_90():
+    global imagen_actual
+    imagen_actual = pygame.transform.rotate(imagen_actual, -90)
+
+def rotar_180():
+    global imagen_actual
+    imagen_actual = pygame.transform.rotate(imagen_actual, 180)
+
+def rotar_270():
+    global imagen_actual
+    imagen_actual = pygame.transform.rotate(imagen_actual, 90)
+
+def escala_grises():
+    global imagen_actual
+    arr = pygame.surfarray.array3d(imagen_actual).astype(float)
+    gris = arr.mean(axis=2)
+    arr2 = np.zeros_like(arr)
+    arr2[:, :, 0] = gris
+    arr2[:, :, 1] = gris
+    arr2[:, :, 2] = gris
+    imagen_actual = pygame.surfarray.make_surface(arr2.astype('uint8'))
+
+def reiniciar():
+    global imagen_actual
+    imagen_actual = imagen_original.copy()
 
 # BOTONES, INTERFAZ Y EVENTOS --------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Rectángulos de botones
@@ -55,16 +91,6 @@ def boton(superficie, rect, texto, presionado):
             rect.y + rect.height // 2 - texto_surf.get_height() // 2
         )
     )
-
-if os.path.exists("extrat.jpg"):
-    imagen_original = pygame.image.load("extrat.jpg").convert_alpha()
-    imagen_original = pygame.transform.smoothscale(imagen_original, (400, 400))
-    imagen_actual = imagen_original.copy()
-else:
-    print("⚠ ERROR: No se encontró extrat.jpg")
-    sys.exit()
-
-
 
 # LOOP PRINCIPAL ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 clock = pygame.time.Clock()
