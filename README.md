@@ -1,5 +1,5 @@
 # Procesador de Imágenes  
-Proyecto Final – Programación  
+Proyecto Final de Álgebra.
 Repositorio oficial: **procesador-de-im-genes**
 
 Este proyecto es un procesador de imágenes interactivo desarrollado en **Python con Pygame**.  
@@ -47,7 +47,7 @@ Esto garantiza que el texto quede en el punto medio exacto.
 
 ---
 
-### ✔ 2. Imagen representada como matriz tridimensional
+###  2. Imagen representada como matriz tridimensional
 Toda imagen se representa así:
 
 \[
@@ -58,7 +58,7 @@ Es decir, una matriz **3D de píxeles** donde c = canal de color.
 
 ---
 
-### ✔ 3. Escala de grises
+###  3. Escala de grises
 Para convertir cada píxel a blanco y negro se aplica:
 
 \[
