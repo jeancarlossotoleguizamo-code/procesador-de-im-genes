@@ -116,4 +116,21 @@ while True:
         if evento.type == pygame.MOUSEBUTTONUP:
             pres90 = pres180 = pres270 = presgris = presreset = False
 
+   
+
+    # dibujar fondo
     VENTANA.fill(FONDO)
+
+    # dibujar imagen (centrada horizontalmente, un poco arriba)
+    img_rect = imagen_actual.get_rect(center=(ANCHO // 2, ALTO // 2 - 40))
+    VENTANA.blit(imagen_actual, img_rect)
+
+    # dibujar botones (con borde)
+    boton(VENTANA, btn_90, "90°", pres90)
+    boton(VENTANA, btn_180, "180°", pres180)
+    boton(VENTANA, btn_270, "270°", pres270)
+    boton(VENTANA, btn_gris, "Grises", presgris)
+    boton(VENTANA, btn_reset, "Reiniciar", presreset)
+
+    pygame.display.update()
+    clock.tick(60)
